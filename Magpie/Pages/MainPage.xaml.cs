@@ -1,4 +1,4 @@
-﻿namespace Magpie;
+﻿namespace Magpie.Pages;
 
 public partial class MainPage : ContentPage
 {
