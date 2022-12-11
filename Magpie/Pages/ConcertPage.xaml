@@ -3,10 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Magpie.Pages.ConcertPage"
              Title="Concerts">
-    <VerticalStackLayout>
-        <Label 
-            Text="{Binding Concert}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Concerts}" RowHeight="120" Margin="10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Border BackgroundColor="#FFC600" WidthRequest="2">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Title}" />
+                                        <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Album}" />
+                                </StackLayout>
+                            </Border>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

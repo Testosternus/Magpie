@@ -5,6 +5,8 @@ using FreshMvvm.Maui.Extensions;
 using Magpie.ViewModels;
 using Magpie.Pages;
 using static Magpie.App;
+using Magpie.Services.Interfaces;
+using Magpie.Services;
 
 public static class MauiProgram
 {
@@ -25,6 +27,9 @@ public static class MauiProgram
 
 		builder.Services.AddTransient<ConcertPage>();
 		builder.Services.AddTransient<ConcertPageModel>();
+
+		builder.Services.AddTransient<IConcertService, ConcertService>();
+		builder.Services.AddTransient<IFoodService, FoodPlaceService>();
 
 		var app = builder.Build();
 		StartUpExtensions.UseFreshMvvm(app);
