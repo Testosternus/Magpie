@@ -10,11 +10,13 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		var tabbedPage = new FreshTabbedNavigationContainer();
-		tabbedPage.AddTab<MainPageModel>("Home", null);
-		tabbedPage.AddTab<ConcertPageModel>("Concert", null);
+		var masterDetail = new FreshMasterDetailNavigationContainer();
+		masterDetail.Title = "Home";
+		masterDetail.Init("Menu");
+		masterDetail.AddPage<ConcertPageModel>("Concerts", null);
+		masterDetail.AddPage<FoodPageModel>("Places to eat", null);
 
-		MainPage = tabbedPage;
+		MainPage = masterDetail;
 	}
 
     internal class MagpieSingleton

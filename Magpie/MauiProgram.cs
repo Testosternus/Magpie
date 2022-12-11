@@ -22,11 +22,11 @@ public static class MauiProgram
 			});
 		builder.Services.AddSingleton<MagpieContext>(Database);
 
-		builder.Services.AddTransient<MainPage>();
-		builder.Services.AddTransient<MainPageModel>();
-
 		builder.Services.AddTransient<ConcertPage>();
 		builder.Services.AddTransient<ConcertPageModel>();
+
+		builder.Services.AddTransient<FoodPage>();
+		builder.Services.AddTransient<FoodPageModel>();
 
 		builder.Services.AddTransient<IConcertService, ConcertService>();
 		builder.Services.AddTransient<IFoodService, FoodPlaceService>();

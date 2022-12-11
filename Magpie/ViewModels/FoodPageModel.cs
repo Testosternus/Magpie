@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Magpie.ViewModels
 {
-    public class MainPageModel : FreshBasePageModel
+    public class FoodPageModel : FreshBasePageModel
     {
-        public string Greeting { get; set; } = "Helloooooooo";
     }
 }
