@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Magpie.ViewModels
 {
@@ -38,6 +39,9 @@ namespace Magpie.ViewModels
 				RaisePropertyChanged(nameof(Concerts));
 			}
 		}
+
+		public ICommand NavigateNewConcert => new Command(
+			async () => await CoreMethods.PushPageModel<NewConcertPageModel>(true,true,true));
 
 	}
 }

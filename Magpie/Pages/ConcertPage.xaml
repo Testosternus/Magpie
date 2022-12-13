@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Magpie.Pages.ConcertPage" Title="Concerts">
+             x:Class="Magpie.Pages.ConcertPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding NavigateNewConcert}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Concerts}" RowHeight="120" Margin="10">
+            <Label Text="HELLOOO" TextColor="#BADA55" BackgroundColor="#2B2B2B" FontSize="Subtitle" />
+            <ListView ItemsSource="{Binding Concerts}" RowHeight="120">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Border BackgroundColor="#FFC600" WidthRequest="2">
+                            <Border BackgroundColor="#BADA55" HorizontalOptions="Fill" Padding="10">
                                 <StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Title}" />
-                                        <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" />
-                                    </StackLayout>
+                                    <Label Text="{Binding Title}" />
+                                    <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
                                     <Label Text="{Binding Album}" />
+                                    <Label Text="{Binding Location}" />
                                 </StackLayout>
                             </Border>
                         </ViewCell>

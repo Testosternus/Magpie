@@ -28,6 +28,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<FoodPage>();
 		builder.Services.AddTransient<FoodPageModel>();
 
+		builder.Services.AddTransient<NewConcertPage>();
+		builder.Services.AddTransient<NewConcertPageModel>();
+
 		builder.Services.AddTransient<IConcertService, ConcertService>();
 		builder.Services.AddTransient<IFoodService, FoodPlaceService>();
 

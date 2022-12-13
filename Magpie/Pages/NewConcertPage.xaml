@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Magpie.Pages.NewConcertPage"
+             Title="Add a new concert">
+    <VerticalStackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Band name:" FontAttributes="Bold" />
+            <Entry Placeholder="..." Text="{Binding Title}" HorizontalOptions="StartAndExpand" WidthRequest="250"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Date:" FontAttributes="Bold" />
+            <DatePicker Date="{Binding Date}"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Venue:" FontAttributes="Bold" />
+            <Entry Placeholder="..." Text="{Binding Location}" WidthRequest="250"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Pictures:" FontAttributes="Bold" />
+            <Entry Placeholder="..." Text="{Binding Album}" WidthRequest="250"/>
+        </StackLayout>
+        <Button Text="Save" Command="{Binding SaveAndReturn}" />
+    </VerticalStackLayout>
+</ContentPage>
