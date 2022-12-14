@@ -8,6 +8,8 @@ public partial class App : Application
 {
 	public App()
 	{
+		Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Nzc4ODAzQDMyMzAyZTMzMmUzMGQ1VHgyL0lUalVXU2hIUklpSms2VUdEKy9paXBoYkRucDFoNDROR05zNXc9");
+
 		InitializeComponent();
 
 		//var masterDetail = new FreshMasterDetailNavigationContainer();

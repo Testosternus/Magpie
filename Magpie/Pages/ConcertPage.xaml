@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Magpie.Pages.ConcertPage">
+             xmlns:lv="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="Magpie.Pages.ConcertPage" BackgroundColor="{StaticResource Black}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Command="{Binding NavigateNewConcert}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="HELLOOO" TextColor="#BADA55" BackgroundColor="#2B2B2B" FontSize="Subtitle" />
-            <ListView ItemsSource="{Binding Concerts}" RowHeight="120">
-                <ListView.ItemTemplate>
+            <lv:SfListView ItemsSource="{Binding Concerts}" SelectionMode="None" VerticalOptions="FillAndExpand" ItemSize="80">
+                <lv:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Border BackgroundColor="#BADA55" HorizontalOptions="Fill" Padding="10">
-                                <StackLayout>
-                                    <Label Text="{Binding Title}" />
-                                    <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
-                                    <Label Text="{Binding Album}" />
-                                    <Label Text="{Binding Location}" />
-                                </StackLayout>
-                            </Border>
-                        </ViewCell>
+                        <Frame BackgroundColor="{StaticResource Black}" Padding="5" Margin="2" HorizontalOptions="Fill">
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Large" TextColor="{StaticResource White}"/>
+                                    <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Subtitle" TextColor="{StaticResource White}"/>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout HorizontalOptions="FillAndExpand">
+                                    <Label Text="❯" FontSize="Large" TextColor="{StaticResource White}"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Frame>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </lv:SfListView.ItemTemplate>
+            </lv:SfListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

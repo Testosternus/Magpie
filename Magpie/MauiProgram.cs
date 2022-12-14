@@ -7,6 +7,7 @@ using Magpie.Pages;
 using static Magpie.App;
 using Magpie.Services.Interfaces;
 using Magpie.Services;
+using Syncfusion.Maui.ListView.Hosting;
 
 public static class MauiProgram
 {
@@ -33,6 +34,8 @@ public static class MauiProgram
 
 		builder.Services.AddTransient<IConcertService, ConcertService>();
 		builder.Services.AddTransient<IFoodService, FoodPlaceService>();
+
+		builder.ConfigureSyncfusionListView();
 
 		var app = builder.Build();
 		StartUpExtensions.UseFreshMvvm(app);
