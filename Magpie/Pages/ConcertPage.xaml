@@ -3,28 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:lv="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              x:Class="Magpie.Pages.ConcertPage" BackgroundColor="{StaticResource Black}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Command="{Binding NavigateNewConcert}"/>
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    <AbsoluteLayout>
         <StackLayout>
             <lv:SfListView ItemsSource="{Binding Concerts}" SelectionMode="None" VerticalOptions="FillAndExpand" ItemSize="80">
                 <lv:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="{StaticResource Black}" Padding="5" Margin="2" HorizontalOptions="Fill">
-                            <HorizontalStackLayout>
-                                <VerticalStackLayout>
-                                    <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Large" TextColor="{StaticResource White}"/>
-                                    <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Subtitle" TextColor="{StaticResource White}"/>
-                                </VerticalStackLayout>
-                                <VerticalStackLayout HorizontalOptions="FillAndExpand">
-                                    <Label Text="❯" FontSize="Large" TextColor="{StaticResource White}"/>
-                                </VerticalStackLayout>
-                            </HorizontalStackLayout>
+                        <Frame BackgroundColor="{StaticResource Black}" Padding="5" Margin="2">
+                            <FlexLayout AlignContent="SpaceBetween" Direction="Column">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Large" TextColor="{StaticResource White}" FlexLayout.Grow="30"/>
+                                <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" FontSize="Subtitle" TextColor="{StaticResource White}" FlexLayout.Grow="30"/>
+                                <Button Text="details &gt;" FontSize="18" TextColor="{StaticResource White}" FlexLayout.AlignSelf="End" BackgroundColor="Transparent" FlexLayout.Grow="30"/>
+                            </FlexLayout>
                         </Frame>
                     </DataTemplate>
                 </lv:SfListView.ItemTemplate>
             </lv:SfListView>
         </StackLayout>
-    </ContentPage.Content>
+        <Button AbsoluteLayout.LayoutBounds="300,550,50,50" CornerRadius="10" Text="+" BackgroundColor="DarkCyan" TextColor="AntiqueWhite" FontSize="Title" Command="{Binding NavigateNewConcert}" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </AbsoluteLayout>
 </ContentPage>
